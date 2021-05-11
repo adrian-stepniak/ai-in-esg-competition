@@ -1,10 +1,10 @@
-from typing import Tuple
-
-from bs4 import BeautifulSoup
-from bs4.element import Tag
-import requests
 import csv
 from time import sleep
+from typing import Tuple
+
+import requests
+from bs4 import BeautifulSoup
+from bs4.element import Tag
 
 
 def select_inner_text(object: Tag, selector: str) -> str:
@@ -54,12 +54,26 @@ def get_company_reviews(company_url, last_year=2019, output_file='reviews.csv', 
 
 
 companies = [
-    'https://pl.indeed.com/cmp/Honda/reviews',
-    'https://pl.indeed.com/cmp/Tata-Consultancy-Services-(tcs)/reviews',
-    'https://pl.indeed.com/cmp/Toyota/reviews',
-    'https://pl.indeed.com/cmp/Mitsubishi/reviews',
-    'https://pl.indeed.com/cmp/Faurecia/reviews',
-    'https://pl.indeed.com/cmp/Mahindra-&-Mahindra-Ltd/reviews'
+    'https://www.indeed.com/cmp/Honda/reviews',
+    'https://www.indeed.com/cmp/Tata-Motors/reviews',
+    'https://www.indeed.com/cmp/Toyota/reviews',
+    'https://www.indeed.com/cmp/Mitsubishi/reviews',
+    'https://www.indeed.com/cmp/Faurecia/reviews',
+    'https://www.indeed.com/cmp/Mahindra-&-Mahindra-Ltd/reviews',
+    'https://www.indeed.com/cmp/BMW-Group/reviews',
+    'https://www.indeed.com/cmp/Nissan/reviews',
+    'https://www.indeed.com/cmp/Schaeffler-Group/reviews',
+    'https://www.indeed.com/cmp/Mazda/reviews',
+    'https://www.indeed.com/cmp/PB/reviews',
+    'https://www.indeed.com/cmp/Equinor/reviews',
+    'https://www.indeed.com/cmp/Hindustan-Petroleum/reviews',
+    'https://www.indeed.com/cmp/Bharat-Petroleum-Corporation-Limited/reviews',
+    'https://www.indeed.com/cmp/Dcc/reviews',
+    'https://www.indeed.com/cmp/JP-Petroleum/reviews',
+    'https://www.indeed.com/cmp/Z-Energy/reviews',
+    'https://www.indeed.com/cmp/Murphy-USA/reviews',
+    'https://www.indeed.com/cmp/Pbf-Energy/reviews',
+    'https://www.indeed.com/cmp/Senex-Energy/reviews'
 ]
 
 for company_url in companies:
