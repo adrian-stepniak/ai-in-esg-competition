@@ -69,7 +69,7 @@ companies = [
     'https://www.indeed.com/cmp/Hindustan-Petroleum/reviews',
     'https://www.indeed.com/cmp/Bharat-Petroleum-Corporation-Limited/reviews',
     'https://www.indeed.com/cmp/Dcc/reviews',
-    'https://www.indeed.com/cmp/JP-Petroleum/reviews',
+    'https://www.indeed.com/cmp/Petronet-Lng-Limited/reviews',
     'https://www.indeed.com/cmp/Z-Energy/reviews',
     'https://www.indeed.com/cmp/Murphy-USA/reviews',
     'https://www.indeed.com/cmp/Pbf-Energy/reviews',
