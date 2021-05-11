@@ -64,7 +64,7 @@ companies = [
     'https://www.indeed.com/cmp/Nissan/reviews',
     'https://www.indeed.com/cmp/Schaeffler-Group/reviews',
     'https://www.indeed.com/cmp/Mazda/reviews',
-    'https://www.indeed.com/cmp/PB/reviews',
+    'https://www.indeed.com/cmp/BP/reviews',
     'https://www.indeed.com/cmp/Equinor/reviews',
     'https://www.indeed.com/cmp/Hindustan-Petroleum/reviews',
     'https://www.indeed.com/cmp/Bharat-Petroleum-Corporation-Limited/reviews',
