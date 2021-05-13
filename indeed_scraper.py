@@ -25,10 +25,6 @@ def scrap_review(review: Tag) -> Tuple[str, str, str, str, str, str]:
     return score, title, author_and_date, description, pros, cons,
 
 
-#
-# base_url = 'https://indeed.com/cmp/Nissan/reviews?fcountry=ALL&lang=en&start='
-#
-
 def get_company_reviews(company_url, last_year=2019, output_file='reviews.csv', sleep_time=0.1):
     reviews_url = company_url + '?fcountry=ALL&lang=en&start='
     i = 0
