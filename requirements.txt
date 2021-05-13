@@ -3,3 +3,4 @@ beautifulsoup4
 eikon
 requests
 pandas
+searchtweets

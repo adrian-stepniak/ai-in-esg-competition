@@ -7,39 +7,32 @@ key = 'API_Key'
 show_fields_args = 'bodyText'
 
 company_names = ['"BP"', '"Equinor"', '"Hindustan Petroleum"', '"HPCL"', '"Bharat Petroleum"', '"BPCL"', '"DCC"',
-                 '"PBF ENERGY"',
-                 '"Z Energy"', '"Murphy USA"', '"MurphyUSA"', '"Petronet LNG"', '"Petronet"', '"Senex Energy"',
-                 '"Mahindra"',
-                 '"Honda"', '"BMW"', '"Tata Motors"', '"Toyota"', '"Nissan"', '"Faurecia"', '"Schaeffler"',
-                 '"Mitsubishi"', '"Mazda"']
+                 '"PBF ENERGY"', '"Z Energy"', '"Murphy USA"', '"MurphyUSA"', '"Petronet LNG"', '"Petronet"',
+                 '"Senex Energy"', '"Mahindra"', '"Honda"', '"BMW"', '"Tata Motors"', '"Toyota"', '"Nissan"',
+                 '"Faurecia"', '"Schaeffler"', '"Mitsubishi"', '"Mazda"']
 
 gov_query_args = ['"audit inconsistencies"', '"tax fraud"', '"governance controversies"', '"corporate governance"']
 
-cyb_query_args = ['scam', 'hack', 'cybersecurity', '"cyber security"', '"cyber-security"',
-                  '"personal data leak"', '"data leak"', 'phishing', 'malware', 'ransomware', '"cyber attack"',
-                  'cyberattack',
-                  'cyberattack', 'cyberthreat', '"cyber threat"', 'cyber-threat', '"fake call"', 'ddos',
-                  '"Social engineering"', 'Backdoor', '"cyber vulnerabilities"', 'cybercriminal']
+cyb_query_args = ['scam', 'hack', 'cybersecurity', '"cyber security"', '"cyber-security"', '"personal data leak"',
+                  '"data leak"', 'phishing', 'malware', 'ransomware', '"cyber attack"', 'cyberattack', 'cyberattack',
+                  'cyberthreat', '"cyber threat"', 'cyber-threat', '"fake call"', 'ddos', '"Social engineering"',
+                  'Backdoor', '"cyber vulnerabilities"', 'cybercriminal']
 
 ceo_query_args = ['CEO', 'CE', '"chief executive officer"', '"chief administrator"', '"chief executive"',
-                  '"CEO succesion"',
-                  '"CEO controversy"', '"CEO said"', 'director', 'boss', '"CEO respond"', '"CEO scandal"',
-                  '"CEO fraud"',
-                  '"CEO action"', '"CEO apologizes"', '"CEO crime"', '"CEO retirement"', '"CEO retiring"',
-                  '"CEO explains"',
-                  '"CEO helps"']
+                  '"CEO succesion"', '"CEO controversy"', '"CEO said"', 'director', 'boss', '"CEO respond"',
+                  '"CEO scandal"', '"CEO fraud"', '"CEO action"', '"CEO apologizes"', '"CEO crime"', '"CEO retirement"',
+                  '"CEO retiring"', '"CEO explains"', '"CEO helps"']
 
 env_query_args = ['"green washing"', 'greenwashing', 'green-washing', '"green sheen"', 'greensheen',
-                  '"green marketing"',
-                  '"green PR"', 'greenscamming', '"green scamming"', 'green-scamming', 'greenscam', '"green scam"',
-                  '"green business"', '"green speak"', 'greenspeak', '"environment protection"', 'ecology',
-                  '"radioactive waste"', '"hazardous waste"', '"illegal dumping"', '"fly dumping"',
-                  '"taxic waste dumping"',
-                  '"electronic waste"', '"toxic waste"', 'environment', 'ecology']
+                  '"green marketing"', '"green PR"', 'greenscamming', '"green scamming"', 'green-scamming', 'greenscam',
+                  '"green scam"', '"green business"', '"green speak"', 'greenspeak', '"environment protection"',
+                  'ecology', '"radioactive waste"', '"hazardous waste"', '"illegal dumping"', '"fly dumping"',
+                  '"toxic waste dumping"', '"electronic waste"', '"toxic waste"', 'environment', 'ecology']
 
 
 def df_add(df, index, article, company):
     df.at[index, 'text'] = article.get('webTitle')
+    df.at[index, 'versionCreated'] = article.get('webPublicationDate')
     df.at[index, 'storyText'] = article.get('fields').get('bodyText')
     df.at[index, 'companyName'] = company_names[company].replace('"', '')
     return index + 1
@@ -65,10 +58,12 @@ def read_news(company_names, key, show_fields_args, query_args):
         whole_query = (base_url + from_date + show_fields + query + api_key).replace(' ', '%20')
 
         response = requests.get(whole_query)
+        if response.status_code != 200:
+            raise Exception(response.status_code, response.text)
         sleep(0.25)
         response_dict = response.json().get('response')
-        temp_df = pd.DataFrame(columns=['text', 'storyText', 'companyName'])
-        if response_dict.get('pages') is not None:
+        temp_df = pd.DataFrame(columns=['text', 'storyText', 'companyName', 'versionCreated'])
+        if response_dict is not None and response_dict.get('pages') is not None:
             for page in range(response_dict.get('pages') + 1):
                 index = 0
                 if page == 0:
