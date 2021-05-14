@@ -101,3 +101,32 @@ The last section of our work was to calculate the ESG components and made the co
 Created charts:
 ![Automobiles](./charts/Automobiles.png "Automobiles")
 ![Oil&Gas](./charts/Oil.png "Oil&Gas")
+
+Comparation between Refinitiv ESG Score and Refinitiv ESG Score adjusted by our ESG Score for 2020 year:
+|Company|Type|Refinitiv ESG Scorem Adjusted|Refinitiv ESG Score|
+| :---: | :---: | :---: | :---: |
+|BMW|Automobiles|77,63|88,63|
+|Faurecia|Automobiles|68,39|71,48|
+|Honda|Automobiles|82,47|87,92|
+|Mahindra & Mahindra|Automobiles|83,84|89,35|
+|Mazda Motor|Automobiles|63,34|65,44|
+|Mitsubishi|Automobiles|67,08|71,89|
+|Nissan Motor|Automobiles|72,10|70,14|
+|Schaeffler|Automobiles|68,62|65,98|
+|Tata Motors|Automobiles|78,74|85,23|
+|Toyota Motor|Automobiles|74,44|76,23|
+
+|Company|Type|Refinitiv ESG Scorem Adjusted|Refinitiv ESG Score|
+| :---: | :---: | :---: | :---: |
+|Bharat Petroleum|Oil & Gas|59,55|62,80|
+|BP|Oil & Gas|77,47|87,32|
+|DCC|Oil & Gas|48,79|48,47|
+|Equinor|Oil & Gas|73,46|79,89|
+|Hindustan Petroleum|Oil & Gas|61,84|63,51|
+|Murphy USA|Oil & Gas|32,62|26,51|
+|PBF ENERGY|Oil & Gas|31,98|34,14|
+|Petronet LNG Limited|Oil & Gas|30,25|22,98|
+|Senex Energy|Oil & Gas|31,69|27,77|
+|Z Energy|Oil & Gas|46,72|41,15|
+
+
