@@ -89,9 +89,9 @@ This script downloads the reviews for the selected company, and then it saves th
 
 After slight adjustments and cleaning of downloaded data, we have used the pretrained **roBERTa model** to calculate the percentage possibilities of sentiment (if it is positive, neutral, or negative). After that, we have transferred the data to *CSV* output. This allowed us to analyze the sentiment of a document with high precision in a relatively short time. We have prepared the four **Python Notebooks**:
 
-* [Python Notebook for The Guardian news sentiment analysis](./Guardian_sentiment_with_BERT.ipynb),
-* [Python Notebook for Indeed reviews sentiment analysis](./Indeed_sentiment_with_BERT.ipynb) ,
-* [Python Notebook for Refinitiv news sentiment analysis](./Refinitiv_sentiment_with_BERT.ipynb) ,
+* [Python Notebook for The Guardian news sentiment analysis](./Guardian%20sentiment%20with%20BERT.ipynb),
+* [Python Notebook for Indeed reviews sentiment analysis](./Indeed%20sentiment%20with%20BERT.ipynb) ,
+* [Python Notebook for Refinitiv news sentiment analysis](./Refinitiv%20sentiment%20with%20BERT.ipynb) ,
 * [Python Notebook for Twitter sentiment analysis](./Sentiment_Analysis_with_BERT.ipynb).
 
 # ESG indicator calculating
