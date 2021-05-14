@@ -4,3 +4,7 @@ eikon
 requests
 pandas
 searchtweets
+matplotlib
+seaborn
+xlrd
+openpyxl

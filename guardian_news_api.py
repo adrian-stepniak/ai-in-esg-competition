@@ -3,14 +3,19 @@ from time import sleep
 import pandas as pd
 import requests
 
+# Loading credentials
 key = 'API_Key'
+
+# Selecting the fields arguments
 show_fields_args = 'bodyText'
 
+# Selecting the companies names
 company_names = ['"BP"', '"Equinor"', '"Hindustan Petroleum"', '"HPCL"', '"Bharat Petroleum"', '"BPCL"', '"DCC"',
                  '"PBF ENERGY"', '"Z Energy"', '"Murphy USA"', '"MurphyUSA"', '"Petronet LNG"', '"Petronet"',
                  '"Senex Energy"', '"Mahindra"', '"Honda"', '"BMW"', '"Tata Motors"', '"Toyota"', '"Nissan"',
                  '"Faurecia"', '"Schaeffler"', '"Mitsubishi"', '"Mazda"']
 
+# Constructing queries
 gov_query_args = ['"audit inconsistencies"', '"tax fraud"', '"governance controversies"', '"corporate governance"']
 
 cyb_query_args = ['scam', 'hack', 'cybersecurity', '"cyber security"', '"cyber-security"', '"personal data leak"',
@@ -30,6 +35,7 @@ env_query_args = ['"green washing"', 'greenwashing', 'green-washing', '"green sh
                   '"toxic waste dumping"', '"electronic waste"', '"toxic waste"', 'environment', 'ecology']
 
 
+# Handling responses
 def df_add(df, index, article, company):
     df.at[index, 'text'] = article.get('webTitle')
     df.at[index, 'versionCreated'] = article.get('webPublicationDate')
@@ -38,6 +44,7 @@ def df_add(df, index, article, company):
     return index + 1
 
 
+# Defining the API connection and requests
 def read_news(company_names, key, show_fields_args, query_args):
     df = pd.DataFrame()
     for company in range(company_names.__len__()):
@@ -82,6 +89,7 @@ def read_news(company_names, key, show_fields_args, query_args):
     return df
 
 
+# Downloading the news for selected companies and exporting them to CSV file
 gov_guardian_df = read_news(company_names, key, show_fields_args, gov_query_args)
 gov_guardian_df.to_csv('gov_guardian_df.csv')
 
