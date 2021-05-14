@@ -99,5 +99,5 @@ After slight adjustments and cleaning of downloaded data, we have used the pretr
 The last section of our work was to calculate the ESG components and made the complete ESG score. To accomplish that, we have used the wages method. At first, we had to download, clean, and link our data. To do that, we have created the new [Python Notebook](./calculation_of_ESG.ipynb). It also consists of ESG indicator calculation. The output of this **Notebook** is saved as an *Excel* file.
 
 Created charts:
-![Automobiles](/url "Automobiles")
-![Oil&Gas](/url "Oil&Gas")
+![Automobiles](./charts/Automobiles.png "Automobiles")
+![Oil&Gas](./charts/Oil.png "Oil&Gas")
