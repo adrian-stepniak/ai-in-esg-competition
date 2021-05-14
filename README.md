@@ -77,14 +77,27 @@ To select the correct Tweets, we have built two queries. All of them are limited
 
 * Environmental - this query includes the hashtags about the environment and greenwashing. Tweets have to mention the company Twitter account. The exact query: **(#greenwashing OR #greenscam OR #environment OR #ecology) @? lang:en**, where **?** means *company name*.
 
-The output of this Python file is **CSV** files with Social and Environmental tweets (*tweet, date, company name*).
+The output of this Python file is *CSV* files with Social and Environmental tweets (*tweet, date, company name*).
 
 ## Indeed Web Scraper
 
 For Indeed we have proposed the Web Scaper written as [Python file](./indeed_scraper.py). It helps to download reviews for selected companies. All reviews are written in English, and all countries take part in them. Web Scraper was designed with good practices (also ethical and lawful).
 
-This script downloads the reviews for the selected company, and then it saves them in a CSV file as output. There are 20 reviews per page. To download these reviews we have to use the BeautifulSoup4 package and Tag selector.
+This script downloads the reviews for the selected company, and then it saves them in a *CSV* file as output. There are 20 reviews per page. To download these reviews we have to use the BeautifulSoup4 package and Tag selector.
 
 # Sentiment analysis
 
+After slight adjustments and cleaning of downloaded data, we have used the pretrained **roBERTa model** to calculate the percentage possibilities of sentiment (if it is positive, neutral, or negative). After that, we have transferred the data to *CSV* output. This allowed us to analyze the sentiment of a document with high precision in a relatively short time. We have prepared the four **Python Notebooks**:
+
+* [Python Notebook for The Guardian news sentiment analysis](./Guardian%20sentiment%20with%20BERT.ipynb),
+* [Python Notebook for Indeed reviews sentiment analysis](./Indeed%20sentiment%20with%20BERT.ipynb) ,
+* [Python Notebook for Refinitiv news sentiment analysis](./Refinitiv%20sentiment%20with%20BERT.ipynb) ,
+* [Python Notebook for Twitter sentiment analysis](./Sentiment_Analysis_with_BERT.ipynb).
+
 # ESG indicator calculating
+
+The last section of our work was to calculate the ESG components and made the complete ESG score. To accomplish that, we have used the wages method. At first, we had to download, clean, and link our data. To do that, we have created the new [Python Notebook](./calculation_of_ESG.ipynb). It also consists of ESG indicator calculation. The output of this **Notebook** is saved as an *Excel* file.
+
+Created charts:
+![Automobiles](/url "Automobiles")
+![Oil&Gas](/url "Oil&Gas")
