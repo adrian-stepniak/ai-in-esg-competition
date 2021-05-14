@@ -37,34 +37,22 @@ Our selected companies for this analysis are - **BP, Equinor, Hindustan Petroleu
 ## Refinitv API component
 
 For Refinitv News API (Eikon API), we have created the [Python Notebook](./ESG_News_Refinitiv.ipynb). The first part of the code is related to making the connection with Eikon API. For more information about Eikon Data API please check the [documentation](https://developers.refinitiv.com/en/api-catalog/eikon/eikon-data-api).
-Organizations' names are coded in specific titles known for Refinitiv to identify the exact company. All news from Refinitiv are in english.
+Organizations' names are coded in specific titles known for Refinitiv to identify the exact company. All news from Refinitiv are in english. For this specific case, we have selected specific dates (taking into account the limitation of APIs) Dates **2020-01-01:2020-06-01, 2020-06-02:2020-12-31, 2021-01-01:2021-12-31**.
 
 Also, we have selected specific topics for our crucial variables:
-* Environmental (env)- this news is related to greenwashing campaigns presented by the organization. It also consists of the ecology aspect of a company and the management of generated wastes. All topics and keywords used in this step are:
+* Environmental (env)- this news is related to greenwashing campaigns presented by the organization. It also consists of the ecology aspect of a company and the management of generated wastes,
+* Governance (gov_con) - in this case, the news is oriented on controversies in the company - like tax affairs, corporate controversies, and bribery attempts,
+* CEO (ceo) - for this category, the news is related to information about the CEO and the decisions or action taken by the CEO,
+* Cybersecurity (cyb) - the last area consists of keywords related to cyber threats and name of them. Additionally, it consists of topics related to hacking and scamming. 
 
-| Topic| Keywords|
-| --- | --- |
-|Topic:ESGENV|green washing, greenwashing, green-washing, green sheen, greensheen, green marketing, green PR, greenscamming, green scamming, green-scamming, greenscam','green scam, green business, green speak, greenspeak, environment protection, ecology','radioactive waste, hazardous waste, illegal dumping, fly dumping, toxic waste dumping, electronic waste, toxic waste|
+All topics and keywords used are:
 
-* Governance (gov_con) - in this case, the news is oriented on controversies in the company - like tax affairs, corporate controversies, and bribery attempts. All topics and keywords used in this scenario are:
-
-| Topic| Keywords|
-| --- | --- |
-|Topic:CRPTAX, Topic:CVALU, Topic:CASE1, Topic:BKRT, Topic:REGS, Topic:CVRSY, Topic:BRIB, Topic:ACCI, Topic:BUYB, Topic:ESGGOV|tax fraud, governance controversies|
-
-* CEO (ceo) - for this category, the news is related to information about the CEO and the decisions or action taken by the CEO. All topics and keywords used are:
-* 
-| Topic| Keywords|
-| --- | --- |
-|Topic:CEO1|CEO, CE, chief executive officer, chief administrator, chief executive, CEO succession, CEO controversy, CEO said, director, boss, CEO response, CEO scandal, CEO fraud, CEO action, CEO apologizes, CEO crime, CEO retirement, CEO retiring, CEO explains, CEO helps|
-
-* Cybersecurity (cyb) - the last area consists of keywords related to cyber threats and name of them. Additionally, it consists of topics related to hacking and scamming. All topics and keywords used are:
-
-| Topic| Keywords|
-| --- | --- |
-|Topic:SCAM1, Topic:HACK|cybersecurity, cyber security, cyber-security, personal data leak, data leak, phishing, malware, ransomware, cyber attack, cyberattack, cyberattack, cyberthreat, cyber threat, cyber-threat, fake call, ddos, Social engineering, Backdoor, cyber vulnerabilities, cybercriminal|
-
-For this specific case, we have selected specific dates (taking into account the limitation of APIs) Dates **2020-01-01:2020-06-01, 2020-06-02:2020-12-31, 2021-01-01:2021-12-31**.
+|Variable| Topic| Keywords|
+| :---: | --- | --- |
+|Environmental|Topic:ESGENV|green washing, greenwashing, green-washing, green sheen, greensheen, green marketing, green PR, greenscamming, green scamming, green-scamming, greenscam,green scam, green business, green speak, greenspeak, environment protection, ecology, radioactive waste, hazardous waste, illegal dumping, fly dumping, toxic waste dumping, electronic waste, toxic waste|
+|Governance|Topic:CRPTAX, Topic:CVALU, Topic:CASE1, Topic:BKRT, Topic:REGS, Topic:CVRSY, Topic:BRIB, Topic:ACCI, Topic:BUYB, Topic:ESGGOV|tax fraud, governance controversies|
+|CEO|Topic:CEO1|CEO, CE, chief executive officer, chief administrator, chief executive, CEO succession, CEO controversy, CEO said, director, boss, CEO response, CEO scandal, CEO fraud, CEO action, CEO apologizes, CEO crime, CEO retirement, CEO retiring, CEO explains, CEO helps|
+|Cybersecurity|Topic:SCAM1, Topic:HACK|cybersecurity, cyber security, cyber-security, personal data leak, data leak, phishing, malware, ransomware, cyber attack, cyberattack, cyberattack, cyberthreat, cyber threat, cyber-threat, fake call, ddos, Social engineering, Backdoor, cyber vulnerabilities, cybercriminal|
 
 ## Guardian API component
 
