@@ -69,7 +69,7 @@ We have built the query with the parameters related to used keywords and compani
 
 ## Twitter API component
 
-For Twitter API we have created the [Python file](). It is connecting to Twitter API with conrete credencials. In this case, we have used the free Premium Sandbox Twitter API for full archive - limited to 50 requests in a month. For more information about Twitter API, please visit [Twitter documentation](https://developer.twitter.com/en/docs) or [Developer Portal](https://developer.twitter.com/en). All downloaded tweets are in english language.
+For Twitter API we have created the [Python file](./twitter_api.py). It is connecting to Twitter API with conrete credencials. In this case, we have used the free Premium Sandbox Twitter API for full archive - limited to 50 requests in a month. For more information about Twitter API, please visit [Twitter documentation](https://developer.twitter.com/en/docs) or [Developer Portal](https://developer.twitter.com/en). All downloaded tweets are in english language.
 
 To select the correct Tweets, we have built two queries. All of them are limited to date from 2020-01-01. Max tweets per request are 100 due to the limitation of Twitter API. Constructed by us queries are:
 
